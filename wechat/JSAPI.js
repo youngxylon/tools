@@ -1,3 +1,4 @@
+//微信支付
 export function pay(data) {
 	const onBridgeReady = () => {
 			WeixinJSBridge.invoke(
