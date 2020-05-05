@@ -1,4 +1,4 @@
-//微信支付
+//微信内H5调起支付 https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7&index=6
 export function pay(data) {
 	const onBridgeReady = () => {
 			WeixinJSBridge.invoke(
