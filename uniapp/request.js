@@ -2,7 +2,6 @@ export default {
 	baseURL: 'http://bluelink.jmhsmy.com',
 	request(options) {
 		let token = uni.getStorageSync('token')
-		// let token = '23657abf-7a04-4687-948a-8749f425ed30'
 		return new Promise((resolve, reject) => {
 			uni.request({
 				url: this.baseURL + options.url,
@@ -16,7 +15,7 @@ export default {
 				dataType: options.dataType,
 				responseType: "text",
 				success(res) {
-					if (res.data.code === 0 && res.statusCode === 200) {
+					if (res.data.code === 0) {
 						resolve(res.data)
 					} else {
 						reject(res.data.message)
@@ -32,14 +31,6 @@ export default {
 						icon: 'none'
 					})
 				},
-				complete(res) {
-					if (res.statusCode !== 200) {
-						uni.showToast({
-							title: res.data,
-							icon: 'none'
-						})
-					}
-				}
 			})
 		})
 	},
