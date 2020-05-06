@@ -18,9 +18,10 @@ export default {
 					if (res.data.code === 0) {
 						resolve(res.data)
 					} else {
-						reject(res.data.message)
+                        reject(res.data)
+                        let message = res.data.message ? res.data.message : res.data
 						uni.showToast({
-							title: res.data.message,
+							title: message,
 							icon: 'none',
 						})
 					}
