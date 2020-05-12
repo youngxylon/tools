@@ -5,6 +5,7 @@ export default function underscoreToUpperObj(obj) {
             delete obj[i];
         }
     }
+    return obj
     function underscoreToUpper(str) {
         const s = str.split('_');
         let newA = '';
