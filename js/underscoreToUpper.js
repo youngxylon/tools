@@ -1,3 +1,8 @@
+/**
+ * change the first underscore letter to uppercase
+ * @param {object} obj
+ * @returns {obj}
+ */
 export default function underscoreToUpperObj(obj) {
     for (const i in obj) {
         if (i.includes('_')) {
