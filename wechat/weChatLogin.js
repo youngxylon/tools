@@ -1,6 +1,5 @@
 import request from './request';
 import store from '@/store';
-import router from '@/router';
 export default function login() {
     //get the code and state
     if (location.search.indexOf('code') != -1) {
@@ -18,7 +17,7 @@ export default function login() {
         }).then(res => {
             //save the token
             store.commit('$setToken', res.data);
-            router.push({ path: '/' });
+            location.reload()
         });
     } else {
         //need the authorized
