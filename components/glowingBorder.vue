@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="border">
     <div style="z-index:9">
       <div class="box">
         <div class="content">
@@ -15,7 +15,7 @@
 export default {}
 </script>
 <style scoped>
-.body {
+.border {
   padding: 0;
   margin: 0;
   display: flex;
@@ -26,7 +26,7 @@ export default {}
 }
 .box {
   position: relative;
-  width: 300px;
+  /* width: 300px; */
   height: 400px;
   display: flex;
   justify-content: center;
