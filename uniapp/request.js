@@ -1,7 +1,7 @@
 export default {
 	baseURL: 'http://bluelink.jmhsmy.com',
 	request(options) {
-		let token = uni.getStorageSync('token')
+		const token = uni.getStorageSync('token')
 		return new Promise((resolve, reject) => {
 			uni.request({
 				url: this.baseURL + options.url,
