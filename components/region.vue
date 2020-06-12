@@ -10,7 +10,7 @@
       <view>{{ regionList[0][province] | toString }} {{ regionList[1][city] | toString }} {{ regionList[2][area] | toString }}</view>
     </picker>
   </view>
-  <!-- sample!!! <Region :region-id.sync="regionId"></Region> -->
+  <!-- sample!!! <Region :region-id.sync="regionId" :disabled="disabled"></Region> -->
 </template>
 
 <script>

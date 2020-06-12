@@ -18,15 +18,20 @@
 	</view>
     <!-- sample!!!
         <UploadImg @change="getImageInfo($event,'productPictures')" :upload_count="4" name="商品图片"></UploadImg>
-    getImageInfo(e, name) {
-				if (e.length !== 0) {
-					if (name === 'productPictures') {
-						this[name] = e.map(i=>{return i.data[0]})
-					} else {
-						this[name] = e[0].data[0]
-					}
+    	getImageInfo(e, name) {
+			if (e.length > 0) {
+				if (name === 'productPictures') {
+					this[name] = e.map(i => {
+						return i.data[0];
+					});
+				} else {
+					this[name][0] = e[0].data[0];
 				}
-			} -->
+			} else {
+				this[name][0] = [];
+			}
+		},
+         -->
 </template>
 
 <script>
