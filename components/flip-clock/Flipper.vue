@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'FlipClock',
+  name: 'Flipper',
   props: {
     // front paper text
     // 前牌文字
