@@ -4,19 +4,19 @@
     <x-sign style="--interval:2574ms;">Come back soon</x-sign>
     <x-sign style="--interval:3083ms;">
       PBR
-      <br>in cans
+      <br />in cans
     </x-sign>
     <x-sign style="--interval:3851ms;">
       REAL LIVE
-      <br>Hot wings
+      <br />Hot wings
     </x-sign>
     <x-sign style="--interval:2906ms;">
       <small>GARDEN PARK</small>
-      <br>MOTEL
+      <br />MOTEL
     </x-sign>
     <x-sign style="--interval:3811ms;">
       Restrooms
-      <br>
+      <br />
       <small>Yes—they are bad</small>
     </x-sign>
     <x-sign style="--interval:2453ms;">FREE RADIOS</x-sign>
@@ -44,11 +44,8 @@
 x-sign {
   --interval: 1s;
   display: block;
-  text-shadow:
-    0 0 10px var(--color1),
-    0 0 20px var(--color2),
-    0 0 40px var(--color3),
-    0 0 80px var(--color4);
+  text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
+    0 0 40px var(--color3), 0 0 80px var(--color4);
   will-change: filter, color;
   filter: saturate(60%);
   animation: flicker steps(100) var(--interval) 1s infinite;
