@@ -6,4 +6,4 @@ export default function isNumber(num) {
   } else {
     return false
   }
-},
+}
