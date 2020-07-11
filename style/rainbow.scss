@@ -1,0 +1,17 @@
+@mixin rainbow {
+  background-image: linear-gradient(135deg, #ff0000, #f36300, #de9200, #c2b700, #a0d600, #74dd54, #46e085, #00e1ad, #00c6d9, #00a5ff, #0078ff, #0000ff);
+	background-size: 400%;
+	background-position: 0 50%;
+  animation: rainbow-bg 10s infinite;
+}
+@keyframes rainbow-bg {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
