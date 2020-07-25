@@ -1,12 +1,11 @@
-function downloadCsv() {
-  //列标题数据
-  let cvsHeaders = Object.assign({}, this.cvsHeaders)
+export default function downloadCsv(headers, list) {
   //整理要导出的json数据
-  let list = this.list.map(e => {
+  list.forEach(e => {
     let item = Object.assign({}, e)
-    item = this.underscoreToUpperObj(item)
     for (let key in item) {
-      if (item[key] !== null && item[key].hasOwnProperty('__toString')) {
+      if (item[key] === null || item[key] === undefined) {
+        item[key] = ''
+      } else if (item[key].hasOwnProperty('__toString')) {
         item[key] = item[key].__toString
       }
     }
@@ -18,8 +17,8 @@ function downloadCsv() {
   //增加\t为了不让表格显示科学计数法或者其他格式
   list.forEach(e => {
     tHeader = ''
-    for (let key in cvsHeaders) {
-      tHeader += cvsHeaders[key].translation + ','
+    for (let key in headers) {
+      tHeader += headers[key].translation + ','
       listData += `${e[key] + '\t'},`
     }
     listData += '\n'
@@ -32,7 +31,7 @@ function downloadCsv() {
   let link = document.createElement('a')
   link.href = uri
   //对下载的文件命名
-  link.download = '订单.csv'
+  link.download = '表格.csv'
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
