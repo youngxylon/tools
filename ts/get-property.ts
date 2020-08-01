@@ -1,5 +1,5 @@
 export default function getProperty(obj: object, key: any): any {
-  if(!obj){
+  if (!obj) {
     return false
   }
 
@@ -7,12 +7,12 @@ export default function getProperty(obj: object, key: any): any {
     return getProperty(obj, key.split('.'))
   }
 
-  if(key.length === 1 && obj.hasOwnProperty(key[0])){
+  if (key.length === 1 && obj.hasOwnProperty(key[0])) {
     return obj[key[0]]
   }
 
-  if(obj.hasOwnProperty(key[0])){
-    return getProperty(obj[key[0]],key.slice(1))
+  if (obj.hasOwnProperty(key[0])) {
+    return getProperty(obj[key[0]], key.slice(1))
   }
 
   return false
