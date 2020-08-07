@@ -1,4 +1,4 @@
-export default function getProperty(obj: object, key: any): any {
+export function getProperty(obj: object, key: any): any {
   if (!obj) {
     return false
   }

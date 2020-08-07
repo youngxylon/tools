@@ -1,4 +1,4 @@
-export default function underscoreToUpperObj(obj: object): object {
+export function underscoreToUpperObj(obj: object): object {
   for (const i in obj) {
     if (i.includes('_')) {
       obj[underscoreToUpper(i)] = obj[i]

@@ -1,4 +1,4 @@
-function getQueryVariable(variable: string): string | number {
+export function getQueryVariable(variable: string): string | number {
   let query = decodeURI(window.location.search.substring(1))
   let vars = query.split('&')
   for (let i = 0; i < vars.length; i++) {
