@@ -1,4 +1,7 @@
-export function getProperty(obj: object, key: any): string {
+export function getProperty(
+  obj: object | any[],
+  key: string | string[]
+): string | boolean {
   if (!obj) {
     return ''
   }
@@ -14,5 +17,4 @@ export function getProperty(obj: object, key: any): string {
   if (obj.hasOwnProperty(key[0])) {
     return getProperty(obj[key[0]], key.slice(1))
   }
-  return ''
 }
