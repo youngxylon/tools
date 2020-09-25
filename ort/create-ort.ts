@@ -93,32 +93,36 @@ class Log {
   }
 
   async postLog() {
-    const url = `http://1629501zp6.51mypc.cn:58142/work/create/date/${getDate(
-      'today'
-    )}/id/3`
-
-    let body = queryStringify({
-      date: getDate('today'),
-      work_text: this.createLog(),
-      nextplandate: getDate('tomorrow'),
-    })
-    const config = {
+    let config = {
       method: 'POST',
       headers: {
         Cookie: 'PHPSESSID=1rsikd7gr83teq6ahg0ordbh97',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: body,
+      body: queryStringify({
+        date: getDate('today'),
+        work_text: this.createLog(),
+        nextplandate: getDate('tomorrow'),
+      }),
     }
 
-    const text = fetch(url, config)
-    text.then(response => {
-      console.log(response)
-      return response.text()
-    })
-    // .then(textData => {
-    //   console.log(textData)
-    // })
+    await fetch(
+      `http://1629501zp6.51mypc.cn:58142/work/create/date/${getDate('today')}/id/3`,
+      config
+    )
+
+    config.method = 'GET'
+    fetch(`http://1629501zp6.51mypc.cn:58142/work/create/id/3`, config)
+      .then(response => {
+        return response.text()
+      })
+      .then(textData => {
+        if (textData.includes(this.projectName)) {
+          console.log(`成功👌👌👌`)
+        } else {
+          console.log(`失败😭😭😭`)
+        }
+      })
   }
 }
 
