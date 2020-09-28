@@ -1,3 +1,23 @@
+async function open(url: string) {
+  let browserProcess
+
+  switch (Deno.build.os) {
+    case 'windows':
+      browserProcess = Deno.run({ cmd: ['explorer', url] })
+      break
+
+    case 'darwin':
+      browserProcess = Deno.run({ cmd: ['open', url] })
+      break
+
+    case 'linux':
+      browserProcess = Deno.run({ cmd: ['sensible-browser', url] })
+      break
+  }
+
+  await browserProcess.status()
+}
+
 function queryStringify(obj: any, prefix?: string): string {
   var pairs: any = []
   for (var key in obj) {
@@ -110,23 +130,11 @@ class Log {
       `http://1629501zp6.51mypc.cn:58142/work/create/date/${getDate('today')}/id/3`,
       config
     )
-
-    config.method = 'GET'
-    fetch(`http://1629501zp6.51mypc.cn:58142/work/create/id/3`, config)
-      .then(response => {
-        return response.text()
-      })
-      .then(textData => {
-        if (textData.includes(this.projectName)) {
-          console.log(`成功👌👌👌`)
-        } else {
-          console.log(`失败😭😭😭`)
-        }
-      })
+    await open('http://1629501zp6.51mypc.cn:58142/work/create/id/3')
   }
 }
 
 const log = new Log('公司管理系统')
 log.postLog()
 
-//deno run --allow-net
+//deno run --allow-all
