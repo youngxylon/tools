@@ -113,10 +113,10 @@ class Log {
   }
 
   async postLog() {
-    let config = {
+    const config = {
       method: 'POST',
       headers: {
-        Cookie: 'PHPSESSID=1rsikd7gr83teq6ahg0ordbh97',
+        Cookie: `PHPSESSID=uhsg0g933v5p4dmc1rkatcq7g4`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: queryStringify({
@@ -126,7 +126,7 @@ class Log {
       }),
     }
 
-    await fetch(
+   await fetch(
       `http://1629501zp6.51mypc.cn:58142/work/create/date/${getDate('today')}/id/3`,
       config
     )
