@@ -1,7 +1,4 @@
-export function getValue(
-  obj: object | any[],
-  key: string | string[]
-): string | boolean {
+export function getValue(obj: object | any[], key: string | string[]): string | boolean {
   if (!obj) {
     return ''
   }

@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        http://1629501zp6.51mypc.cn:58142/work/create/id/3
+// @match        http://1629501zp6.51mypc.cn:58142/work/create/*
 // @grant        none
 // ==/UserScript==
 
