@@ -13,7 +13,10 @@
   'use strict'
 
   // Your code here...
-  console.log(location)
+  if(document.referrer.includes('/company/login')){
+    location.href= location.origin + "/work/create/id/3"
+  }
+
   if (location.pathname.includes('/company/login')) {
     document.getElementById('companyname').value = 'LY'
     document.getElementById('username').value = '程序员-杨健斌'
