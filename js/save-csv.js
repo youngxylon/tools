@@ -1,4 +1,4 @@
-export default function downloadCsv(headers, list) {
+export default function saveCsv(headers, list) {
   function dataProcess(data) {
     let objData = Object.assign({}, data)
     for (let key in objData) {
