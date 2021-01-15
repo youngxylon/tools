@@ -1,4 +1,4 @@
-export default function getValue(obj, key) {
+function getValue(obj, key) {
   if (!obj) {
     return null
   }
@@ -15,7 +15,11 @@ export default function getValue(obj, key) {
     }
   }
 
+
+
   if (Object.prototype.hasOwnProperty.call(obj, key[0])) {
     return getValue(obj[key[0]], key.slice(1))
   }
 }
+
+module.exports = getValue
