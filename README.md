@@ -17,7 +17,7 @@
 ## print
 * print-js
 
-## save || download
+## save or download
 * file-saver
 
 ## chart
