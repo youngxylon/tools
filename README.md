@@ -1,5 +1,9 @@
 # Utils
 
+## base
+* get-value
+* kindOf
+
 ## Number
 * numbro
 * vue-count-to
