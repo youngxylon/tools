@@ -2,21 +2,25 @@
 
 ## base
 * get-value
-* kindOf
+* kindOf 👉 type checking
 
-## Number
-* numbro
-* vue-count-to
-
-## Api
+## api
 * axios
 
-## Excel
-* xlsx
-* vue-ele-import
+## chart
+* echarts
+* d3
 
 ## canvas
 * html2canvas
+
+## excel
+* xlsx
+* vue-ele-import
+
+## number
+* numbro
+* vue-count-to
 
 ## print
 * print-js
@@ -24,6 +28,3 @@
 ## save or download
 * file-saver
 
-## chart
-* echarts
-* d3
