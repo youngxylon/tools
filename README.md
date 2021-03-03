@@ -1,11 +1,11 @@
 # Utils
 
+## api
+* axios
+
 ## base
 * get-value
 * kindOf 👉 type checking
-
-## api
-* axios
 
 ## chart
 * echarts
@@ -24,6 +24,9 @@
 
 ## print
 * print-js
+
+## qrcode
+* qrcode
 
 ## save or download
 * file-saver
