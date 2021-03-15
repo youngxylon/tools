@@ -21,8 +21,8 @@ class Download {
         });
     });
     function getFileName() {
-      const result = url.match(/[^/]+\.(jpg|png))/)
-      return result ? result[1] : ''
+      const result = url.match(/[^/]+\.(jpg|png)/)
+      return result ? result[0] : ''
     }
   }
 }

@@ -19,7 +19,7 @@ function toUnderscore(str) {
 }
 
 function toCamelCase(str) {
-  return str.replace(/\_(\w)/g, function (all, letter) {
+  return str.replace(/\_|\-(\w)/g, function (all, letter) {
     return letter.toUpperCase()
   })
 }
