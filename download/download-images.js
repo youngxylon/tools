@@ -4,33 +4,40 @@ const request = require('request')
 const download = require('./download')
 
 class DownloadImages {
-  constructor() {
-    this.filePath = path.resolve('C:/Users/xylon/Downloads/url/')
+  constructor(folderPath) {
+    this.filepath = path.resolve(folderPath)
+    this.downloadPath = folderPath + '/download'
+  }
+  checkDownloadFolder() {
+    fs.access(this.downloadPath, function (err) {
+      if (err) {
+        fs.mkdir(this.downloadPath)
+      }
+    })
   }
   download() {
-    const files = this.getJsonData(this.filePath)
+    this.checkDownloadFolder()
+    const files = this.getJsonData(this.filepath)
     const waitPromise = []
-    files.forEach(e => {
+    files.forEach((e) => {
       const urls = JSON.stringify(e).match(/[^"|^']+\.(jpg|png)/g)
       if (urls) {
-        urls.forEach(i => {
+        urls.forEach((i) => {
           if (i.includes('http')) {
-            waitPromise.push(
-              this.downloadImage(i, `C:/Users/xylon/Downloads/url/`)
-            )
+            waitPromise.push(this.downloadImage(i, this.downloadPath))
           }
         })
       }
     })
     Promise.all(waitPromise).then(() => {
-      console.log('👌👌👌')
+      console.log('finished')
     })
   }
-  getJsonData(filePath) {
+  getJsonData(filepath) {
     const result = []
-    const files = fs.readdirSync(filePath)
-    files.forEach(filename => {
-      const fileDir = path.join(filePath, filename)
+    const files = fs.readdirSync(filepath)
+    files.forEach((filename) => {
+      const fileDir = path.join(filepath, filename)
       const stat = fs.statSync(fileDir)
       if (stat.isFile()) {
         const content = fs.readFileSync(fileDir, 'utf-8')
@@ -48,7 +55,7 @@ class DownloadImages {
       request
         .get(url)
         .pipe(fs.createWriteStream(path))
-        .on('error', e => {
+        .on('error', (e) => {
           console.log('pipe error', e)
           resolve('')
         })
@@ -62,5 +69,5 @@ class DownloadImages {
     return result ? result[0] : ''
   }
 }
-images = new DownloadImages()
+images = new DownloadImages('C:/Users/xylon/Downloads/url/')
 images.download()
