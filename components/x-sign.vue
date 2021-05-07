@@ -1,27 +1,30 @@
 <template>
   <div class="body">
-    <x-sign style="--interval:3448ms;">OPEN</x-sign>
-    <x-sign style="--interval:2574ms;">Come back soon</x-sign>
-    <x-sign style="--interval:3083ms;">
+    <x-sign style="--interval: 3448ms">OPEN</x-sign>
+    <x-sign style="--interval: 2574ms">Come back soon</x-sign>
+    <x-sign style="--interval: 3083ms">
       PBR
-      <br />in cans
+      <br />
+      in cans
     </x-sign>
-    <x-sign style="--interval:3851ms;">
+    <x-sign style="--interval: 3851ms">
       REAL LIVE
-      <br />Hot wings
+      <br />
+      Hot wings
     </x-sign>
-    <x-sign style="--interval:2906ms;">
+    <x-sign style="--interval: 2906ms">
       <small>GARDEN PARK</small>
-      <br />MOTEL
+      <br />
+      MOTEL
     </x-sign>
-    <x-sign style="--interval:3811ms;">
+    <x-sign style="--interval: 3811ms">
       Restrooms
       <br />
       <small>Yes—they are bad</small>
     </x-sign>
-    <x-sign style="--interval:2453ms;">FREE RADIOS</x-sign>
-    <x-sign style="--interval:2405ms;">WHO YOU GONNA CALL?</x-sign>
-    <x-sign style="--interval:3099ms;">Karaoke Inside</x-sign>
+    <x-sign style="--interval: 2453ms">FREE RADIOS</x-sign>
+    <x-sign style="--interval: 2405ms">WHO YOU GONNA CALL?</x-sign>
+    <x-sign style="--interval: 3099ms">Karaoke Inside</x-sign>
   </div>
 </template>
 <style  scoped>

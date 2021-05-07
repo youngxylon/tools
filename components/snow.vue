@@ -13,7 +13,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -99
+  z-index: -99;
 }
 
 @function random_range($min, $max) {
