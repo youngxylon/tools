@@ -1,12 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const request = require('request')
-const download = require('./download')
 
 class DownloadImages {
   constructor(folderPath) {
     this.filepath = path.resolve(folderPath)
-    this.downloadPath = folderPath + '/download'
+    this.downloadPath = folderPath
   }
   checkDownloadFolder() {
     fs.access(this.downloadPath, function (err) {
@@ -69,5 +68,5 @@ class DownloadImages {
     return result ? result[0] : ''
   }
 }
-images = new DownloadImages('C:/Users/xylon/Downloads/url/')
+images = new DownloadImages('C:/Users/xylon/Downloads/images/')
 images.download()
